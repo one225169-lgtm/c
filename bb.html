@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>给你的话</title>
+<style>
+body {
+  background: linear-gradient(#ff9a9e, #fad0c4);
+  font-family: "Arial";
+  text-align: center;
+  padding-top: 100px;
+}
+#card {
+  background: white;
+  width: 300px;
+  margin: auto;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+button {
+  background: #ff5e78;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+button:hover {
+  background: #ff2f55;
+}
+.hidden {
+  display: none;
+}
+</style>
+</head>
+
+<body>
+
+<div id="card">
+  <h2>💗 给你的一封小信</h2>
+  <p id="text">点击下面的按钮，我想告诉你一件事…</p>
+  <button onclick="next()">点我</button>
+</div>
+
+<script>
+let step = 0;
+const messages = [
+  "其实，每天和你聊天的时候，我都会偷偷开心 😊",
+  "不管多累，只要看到你的名字，我就觉得一切都值得",
+  "你已经变成我生活中很重要的一部分",
+  "所以…我想认真告诉你",
+  "我喜欢你 ❤️"
+];
+
+function next() {
+  if (step < messages.length) {
+    document.getElementById("text").innerText = messages[step];
+    step++;
+  } else {
+    document.getElementById("card").innerHTML =
+      "<h2>🌹</h2><p>谢谢你看到这里<br>不管你的回答是什么<br>你对我都很重要</p>";
+  }
+}
+</script>
+
+</body>
+</html>
